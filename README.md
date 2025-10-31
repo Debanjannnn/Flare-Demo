@@ -36,26 +36,29 @@ NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=YOUR_WALLETCONNECT_PROJECT_ID
 import { defineChain } from 'viem'
 import { sepolia } from 'viem/chains'
 
-export const celoSepoliaTestnet = defineChain({
-  id: 11142220,
-  name: 'Celo Sepolia Testnet',
+
+
+export const flareTestnetCoston2 = defineChain({
+  id: 114, // 0x72
+  name: 'Flare Testnet Coston2',
   nativeCurrency: {
     decimals: 18,
-    name: 'Celo Sepolia Testnet',
-    symbol: 'CELO',
+    name: 'Flare Testnet Coston2',
+    symbol: 'C2FLR',
   },
   rpcUrls: {
-    default: { http: ['https://forno.celo-sepolia.celo-testnet.org/'] },
-    public: { http: ['https://forno.celo-sepolia.celo-testnet.org/'] },
+    default: { http: ['https://coston2-api.flare.network/ext/C/rpc'] },
+    public: { http: ['https://coston2-api.flare.network/ext/C/rpc'] },
   },
   blockExplorers: {
     default: {
-      name: 'Celo Sepolia Testnet Explorer',
-      url: 'https://celo-sepolia.blockscout.com/',
+      name: 'Flare Testnet Coston2 Explorer',
+      url: 'https://coston2-explorer.flare.network/',
     },
   },
   testnet: true,
 })
+
 
 export { sepolia }
 ```
@@ -64,12 +67,12 @@ export { sepolia }
 
 ```ts
 import { getDefaultConfig } from "@rainbow-me/rainbowkit";
-import { celoSepoliaTestnet, sepolia } from './config'
+import { flareTestnetCoston2, sepolia } from './config'
 
 export const config = getDefaultConfig({
-  appName: "XYZ",
-  projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || "YOUR_WALLETCONNECT_PROJECT_ID",
-  chains: [celoSepoliaTestnet, sepolia],
+  appName: "SwapX",
+  projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || "YOUR_WALLETCONNECT_PROJECT_ID", // You'll need to get this from WalletConnect
+  chains: [flareTestnetCoston2, sepolia],
   ssr: true,
 });
 
