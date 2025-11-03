@@ -1,6 +1,6 @@
-## RainbowKit + Wagmi Integration (Celo Sepolia Testnet)
+## RainbowKit + Wagmi Integration (Flare Testnet)
 
-This app connects wallets via RainbowKit and uses Wagmi/viem to interact with a Celo-compatible smart contract.
+This app connects wallets via RainbowKit and uses Wagmi/viem to interact with a Flare-compatible smart contract.
 
 ### Install dependencies
 
@@ -21,7 +21,7 @@ NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=YOUR_WALLETCONNECT_PROJECT_ID
 
 ### Files changed/added for the integration
 
-- `lib/config.ts` — custom chain config for Celo Sepolia
+- `lib/config.ts` — custom chain config for Flare testnet
 - `lib/wagmi.ts` — RainbowKit default config + chain list
 - `components/Provider.tsx` — wraps app with Wagmi, RainbowKit and React Query
 - `app/layout.tsx` — mounts `Providers` at the root
@@ -184,7 +184,7 @@ export default function Home() {
 7) `lib/contract.ts` (export ABI and contract address)
 
 ```ts
-export const contractAddress = "0xf7ee5d6fdebdc25e08ebffc8f77ec3a59a1403da";
+export const contractAddress = "0x392a8463628c48e76602f188d00de0f9b2b230b0";
 
 // Export only the ABI array
 export const contractABI = [
@@ -436,7 +436,7 @@ const Will = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
           <div className="bg-card border border-border rounded-lg p-4">
             <p className="text-muted-foreground text-xs uppercase tracking-wide mb-2">Contract Balance</p>
-            <p className="text-2xl font-semibold text-foreground">{data.contractBalance} CELO</p>
+            <p className="text-2xl font-semibold text-foreground">{data.contractBalance} FLR</p>
           </div>
           <div className="bg-card border border-border rounded-lg p-4">
             <p className="text-muted-foreground text-xs uppercase tracking-wide mb-2">Your Wills</p>
@@ -474,7 +474,7 @@ const Will = () => {
               >
                 2
               </span>
-              <label className="block text-sm font-medium text-foreground">Deposit CELO</label>
+              <label className="block text-sm font-medium text-foreground">Deposit FLR</label>
               {!isRecipientValid && <span className="text-xs text-muted-foreground">(Set valid recipient first)</span>}
             </div>
             <input

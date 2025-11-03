@@ -64,7 +64,7 @@ const Will = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
           <div className="bg-card border border-border rounded-lg p-4">
             <p className="text-muted-foreground text-xs uppercase tracking-wide mb-2">Contract Balance</p>
-            <p className="text-2xl font-semibold text-foreground">{data.contractBalance} CELO</p>
+            <p className="text-2xl font-semibold text-foreground">{data.contractBalance} FLR</p>
           </div>
           <div className="bg-card border border-border rounded-lg p-4">
             <p className="text-muted-foreground text-xs uppercase tracking-wide mb-2">Your Wills</p>
@@ -102,7 +102,7 @@ const Will = () => {
               >
                 2
               </span>
-              <label className="block text-sm font-medium text-foreground">Deposit CELO</label>
+              <label className="block text-sm font-medium text-foreground">Deposit FLR</label>
               {!isRecipientValid && <span className="text-xs text-muted-foreground">(Set valid recipient first)</span>}
             </div>
             <input
